@@ -1,0 +1,85 @@
+.home-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.home-container h1{
+    font-size: 48px;
+    margin-bottom: 8px;
+}
+
+.home-container span{
+    margin-bottom: 28px;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    max-width: 600px; /*Colocando esse estilo os inputs nao irao ficar SUPER LARGOS*/
+}
+
+.form input{
+    border: 0;
+    margin-bottom: 12px;
+    height: 36px;
+    border-radius: 5px;
+    padding: 0 8px;
+}
+
+.form button{
+    height: 36px;
+    border: 0;
+    border-radius: 4px;
+    background-color: #000000;
+    color: #FFF;
+}
+
+.form button:hover{
+    animation: scaleButton 0.8s alternate infinite;
+}
+
+@keyframes scaleButton {
+    from{
+        transform: scale(1)
+    }
+    to{
+        transform: scale(1.07);
+    }
+}
+
+.form textarea{        /*Essa codeline servira futuramente*/
+    margin-top: 12px;
+    border: 0;
+    height: 90px;
+    resize: none;
+    border-radius: 4px;
+}
+
+.button-link{
+    color: #FFF;
+    font-weight: bold;
+    text-decoration: none;
+    margin: 14px 0;
+    font-size: 14px;
+}
+
+.button-link:hover{
+    animation: animationcolor 0.8s infinite alternate; /* O infinite serve pra fazer sempre a animacao e o alternate pra alternar entre as aniamcoes */
+    color: rgb(17, 17, 17);
+}
+
+@keyframes animationcolor {
+    from{
+        transform: translateY(0) scale(1);
+    }
+
+    to{
+        transform: translateY(-3px) scale(1.1);
+    }
+    
+}
