@@ -1,19 +1,32 @@
 import { Link } from 'react-router-dom'
+import { auth } from '../../firebaseConnection'
+import { createUserWithEmailAndPassword } from 'firebase/auth'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 
 export default function Register() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
-    function handleRegister(e){
+    const navigate = useNavigate()
+
+    async function handleRegister(e){
         e.preventDefault()
 
         if(email !== '' && password !== ''){
-            alert("Campos preenchidos com sucesso!")
-        } else{
-            alert("Preencha todos os campos!")
-        }
+            await createUserWithEmailAndPassword(auth,email,password)
+            
+            .then(() => {
+                navigate('/admin', { replace: true})
+            })
+            .catch(() => {
+                console.log("Erro ao fazer cadastro")
+            })
+        } 
+            else{
+                alert("Preencha todos os campos!!")
+            }
     }
 
     return(
@@ -30,15 +43,13 @@ export default function Register() {
                 />
 
                 <input
-                autoComplete={false} //Usamos o false pois nao queremos que o navegador forneca opçoes de senhas ja que estamos criando uma conta do 0
                 type='password'
                 placeholder='**********'
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 />
 
-                <button type='submit'>Acessar</button>
-                
+                <button type='submit'>Registrar</button>
             </form>
 
             <Link className='button-link' to="/">
