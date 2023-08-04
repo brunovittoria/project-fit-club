@@ -1,9 +1,14 @@
 import './admin.css'
+import Veggie from '../../components/Veggie'
+import Popular from '../../components/Popular'
+
 
 export default function Admin() {
+
     return(
         <div>
-            <h1>Pagina Admin!</h1>
+            <Veggie />
+            <Popular />
         </div>
     )
 }

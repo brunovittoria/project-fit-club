@@ -1,6 +1,7 @@
 import { initializeApp } from 'firebase/app'
 import { getFirestore } from 'firebase/firestore'
 import { getAuth } from 'firebase/auth'
+import { signOut } from 'firebase/auth';
 
 const firebaseConfig = {
     apiKey: "AIzaSyBB982bHrl1WthWvhijNMbyNif18yoSuGg",
