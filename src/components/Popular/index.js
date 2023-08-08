@@ -14,11 +14,14 @@ export default function Popular(){
     },[])
 
     const getPopular = async () => { //Fazemos ASYNC pois devemos ter CRTZ de que teremos os dados antes de renderizar qualquer coisa
-      const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=9`) //Como queremos 9 receitas devemos setar esse valor no FETCH
-      const data = await api.json() //Iso ira retornar os valores dos dados em JSON para que assim possamos MANIPULAR OS DADOS
-      setPopular(data.recipes) //Usando o set, iremos Puxar os objetos de dentro da ARRAY para que possamos renderizarlo no RETURN
-      console.log(data.recipes) //Usamos esse console para poder ver as propriedade dentro do DATA para posteriormente usar no nosso RETURN
-    }
+      
+          const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=9`) //Como queremos 9 receitas devemos setar esse valor no FETCH
+          const data = await api.json() //Iso ira retornar os valores dos dados em JSON para que assim possamos MANIPULAR OS DADOS
+          
+          setPopular(data.recipes) //Usando o set, iremos Puxar os objetos de dentro da ARRAY para que possamos renderizarlo no RETURN
+          console.log(data.recipes) //Usamos esse console para poder ver as propriedade dentro do DATA para posteriormente usar no nosso RETURN
+      }
+      
 
     return(
         <div>
@@ -33,9 +36,9 @@ export default function Popular(){
                  gap: "5rem",
                 }}
                 >
-                    {popular.map((recipe) => {
+                    {popular.map((recipe) => { // Na C.L 38 devemos lembrar sempre de passar uma KEY com ID para nosso componente
                         return(
-                            <SplideSlide>
+                            <SplideSlide key={recipe.id}> 
                                 <Card>
                                     <p>{recipe.title}</p>
                                     <img src={recipe.image} alt={recipe.title}/>
