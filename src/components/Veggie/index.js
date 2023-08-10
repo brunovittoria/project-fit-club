@@ -2,6 +2,8 @@ import { useEffect, useState } from "react"
 import styled from "styled-components"
 import { Splide, SplideSlide } from "@splidejs/react-splide"
 import '@splidejs/react-splide/css';
+import './veggie.css'
+
 
 
 export default function Veggie(){
@@ -14,7 +16,8 @@ export default function Veggie(){
 
     const getVeggie = async () => { //Fazemos ASYNC pois devemos ter CRTZ de que teremos os dados antes de renderizar qualquer coisa
       
-          const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=9`) //Como queremos 9 receitas devemos setar esse valor no FETCH
+          const api = await fetch(
+          `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=9&tags=vegetarian`) //Como queremos 9 receitas devemos setar esse valor no FETCH
           const data = await api.json() //Iso ira retornar os valores dos dados em JSON para que assim possamos MANIPULAR OS DADOS
           
           setVeggie(data.recipes) //Usando o set, iremos Puxar os objetos de dentro da ARRAY para que possamos renderizarlo no RETURN
@@ -54,6 +57,7 @@ export default function Veggie(){
 
 const Wrapper = styled.div`
  margin: 4rem 0rem;
+ margin: 2% 9%; 
 `;
 
 const Card = styled.div`

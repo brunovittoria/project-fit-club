@@ -5,6 +5,7 @@ import Register from '../pages/Register'
 import Admin from '../pages/Admin'
 import Recipes from '../pages/Recipes'
 import Header from '../components/Header'
+import Cuisine from '../pages/Cuisine'
 
 import Private from './Private'
 
@@ -16,6 +17,7 @@ function RoutesApp(){
             
             <Route path='/admin' element={ <Private> <Header/> <Admin/> </Private>}/>
             <Route path='/recipes' element={ <Private> <Header/> <Recipes/> </Private>}/>
+            <Route path='/cuisine' element={ <Private> <Header/> <Cuisine/> </Private>}/>
         </Routes>
         
     )

@@ -2,6 +2,8 @@ import { useEffect, useState } from "react"
 import styled from "styled-components"
 import { Splide, SplideSlide } from "@splidejs/react-splide"
 import '@splidejs/react-splide/css';
+import './popular.css'
+
 
 
 
@@ -55,6 +57,7 @@ export default function Popular(){
 
 const Wrapper = styled.div`
  margin: 4rem 0rem;
+ margin: 2% 9%; 
 `;
 
 const Card = styled.div`
