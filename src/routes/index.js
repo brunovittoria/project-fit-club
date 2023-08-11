@@ -17,8 +17,10 @@ function RoutesApp(){
             
             <Route path='/admin' element={ <Private> <Header/> <Admin/> </Private>}/>
             <Route path='/recipes' element={ <Private> <Header/> <Recipes/> </Private>}/>
-            <Route path='/cuisine' element={ <Private> <Header/> <Cuisine/> </Private>}/>
+            <Route path='/cuisine/:type' element={ <Private> <Header/> <Cuisine/> </Private>}/> 
         </Routes>
+
+        //Esse :type ira servir para renderizar a culinaria selecionada pelo usuario, isso é usado quando queremos navegar o usuario por diferentes partes da nossa pagina.
         
     )
 }
