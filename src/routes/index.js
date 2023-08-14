@@ -6,6 +6,7 @@ import Admin from '../pages/Admin'
 import Recipes from '../pages/Recipes'
 import Header from '../components/Header'
 import Cuisine from '../pages/Cuisine'
+import Search from '../components/Search'
 
 import Private from './Private'
 
@@ -15,9 +16,9 @@ function RoutesApp(){
             <Route path='/' element={ <Home/> }/>
             <Route path='/register' element= { <Register/>} />
             
-            <Route path='/admin' element={ <Private> <Header/> <Admin/> </Private>}/>
+            <Route path='/admin' element={ <Private> <Header/> <Search/> <Admin/> </Private>}/>
             <Route path='/recipes' element={ <Private> <Header/> <Recipes/> </Private>}/>
-            <Route path='/cuisine/:type' element={ <Private> <Header/> <Cuisine/> </Private>}/> 
+            <Route path='/cuisine/:type' element={ <Private> <Header/> <Search/> <Cuisine/> </Private>}/> 
         </Routes>
 
         //Esse :type ira servir para renderizar a culinaria selecionada pelo usuario, isso é usado quando queremos navegar o usuario por diferentes partes da nossa pagina.

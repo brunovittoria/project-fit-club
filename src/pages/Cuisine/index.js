@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import styled from 'styled-components';
 import { motion } from "framer-motion";
 import { Link, useParams } from "react-router-dom"; //O useParams serve para pegar a keyword da URL
+import Category from "../../components/Category";
 
 export default function Cuisine(){
 
@@ -25,6 +26,11 @@ export default function Cuisine(){
     }, [params.type])
 
     return(
+    <>
+        <Category>
+
+        </Category>
+
         <Grid>
             {cuisine.map((item) => {
                 return(
@@ -34,8 +40,9 @@ export default function Cuisine(){
                     </Card>
                 )
             })}
-        
         </Grid>
+    </>
+
     )
 }
 
@@ -59,7 +66,5 @@ const Card = styled.div`
     text-align: center;
     ppadding: 1rem;
    }
-
-
 `;
 
