@@ -1,13 +1,29 @@
 import styled from 'styled-components'
 import { useState } from 'react'
 import {FaSearch} from 'react-icons/fa'
+import { useNavigate } from 'react-router-dom' //Usamos o useNavigate pois ao usar ele iremos precisar de uma logica de navegacao mais sofisticada do que usar somente um (LINK)
 
 export default function Search() {
-    return(
-        <FormStyle>
-            <div>
-                <FaSearch></FaSearch>
-                <input type='text'/>
+    const [input, setInput] = useState("") //Iremos pegar o valor do input na NAVBAR usando o USESTATE
+    const navigate = useNavigate()
+
+    // Ao dar o submit queremos que a pagina carregue de acordo com oq pesquisarmos, porem queremos que o search bar e os ICONS nao sejam carregados
+
+    const submitHandler = (e) => {
+        e.preventDefault();
+        navigate('/searched/'+input)
+    }
+
+
+
+    return( 
+
+        //Na C.L 14 estamos colocando o INPUT como estado e no ONCHANGE (Quando começarmos a digitar no searchbar) estamos pedindo para que rode uma funcao pra que pegue o valor do texto que foi digitado e armazene no setInput
+
+        <FormStyle onSubmit={submitHandler}> 
+            <div> 
+                <FaSearch></FaSearch> 
+                <input onChange={(e) => setInput(e.target.value)} type='text' value={input}/> 
             </div>
         </FormStyle>
     )
