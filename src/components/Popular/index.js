@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { Splide, SplideSlide } from "@splidejs/react-splide"
 import '@splidejs/react-splide/css';
 import './popular.css'
+import { Link } from "react-router-dom";
 
 
 
@@ -42,9 +43,11 @@ export default function Popular(){
                         return(
                             <SplideSlide key={recipe.id}> 
                                 <Card>
+                                    <Link to={"/recipe/" + recipe.id}> 
                                     <p>{recipe.title}</p>
                                     <img src={recipe.image} alt={recipe.title}/>
                                     <Gradient />
+                                    </Link>
                                 </Card>
                             </SplideSlide>
                         )
@@ -78,6 +81,7 @@ const Card = styled.div`
 
  p{
     position: absolute;
+    color: white;
     z-index: 10;
     left: 50%;
     bottom: 0%;
