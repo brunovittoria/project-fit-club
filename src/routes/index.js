@@ -15,17 +15,16 @@ import Private from './Private'
 
 function RoutesApp(){
     return(
-        <Routes>
-            <Route path='/' element={ <Home/> }/>
-            <Route path='/register' element= { <Register/>} />
-            
-            <Route path='/admin' element={ <Private> <Header/> <Search/> <Admin/> </Private>}/>
-            <Route path='/recipes' element={ <Private> <Header/> <Recipes/> </Private>}/>
-            <Route path='/cuisine/:type' element={ <Private> <Header/> <Search/> <Cuisine/> </Private>}/>
-            <Route path='/searched/:search' element= { <Private> <Header/> <Search/> <Category/> <Searched/> </Private> }/>
-            <Route path='/recipe/:name' element= { <Private> <Header/> <Search/> <Category/> <Recipe/> </Private> }/>
-
-        </Routes>
+            <Routes>
+                <Route path='/' element={ <Home/> }/>
+                <Route path='/register' element= { <Register/>} />
+                
+                <Route path='/admin' element={ <Private> <Header/> <Search/> <Admin/> </Private>}/>
+                <Route path='/recipes' element={ <Private> <Header/> <Recipes/> </Private>}/>
+                <Route path='/cuisine/:type' element={ <Private> <Header/> <Search/> <Cuisine/> </Private>}/>
+                <Route path='/searched/:search' element= { <Private> <Header/> <Search/> <Category/> <Searched/> </Private> }/>
+                <Route path='/recipe/:name' element= { <Private> <Header/> <Search/> <Category/> <Recipe/> </Private> }/>
+            </Routes>
 
         //Esse :type ira servir para renderizar a culinaria selecionada pelo usuario, isso é usado quando queremos navegar o usuario por diferentes partes da nossa pagina.
         
