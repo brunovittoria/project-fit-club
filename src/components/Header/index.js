@@ -19,7 +19,6 @@ export default function Header(){
             <GiKnifeFork/>
             <Logo to={"/admin"}>Fit Club</Logo>
             </Nav>
-            <Link className='recipes' to='/recipes'>Minhas Receitas</Link>
             <button className='btn-logout' onClick={handleLogout}>Sair</button>
         </header>
     )

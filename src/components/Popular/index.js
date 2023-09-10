@@ -60,15 +60,19 @@ export default function Popular(){
 
 const Wrapper = styled.div`
  margin: 4rem 0rem;
- margin: 2% 9%; 
+ margin: 2% 9%;
 `;
 
 const Card = styled.div`
+ margin-top: 1rem;
+ margin-bottom: 1rem;
  min-height: 25rem;
  border-radius: 1rem;
  overflow: hidden;
  position: relative;
  cursor: pointer;
+ box-shadow: rgba(0, 0, 0, 0.5) 0px 7px 10px 0px;
+
 
  img{
     border-radius: 2rem;

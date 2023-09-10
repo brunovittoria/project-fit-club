@@ -21,9 +21,7 @@ export default function Recipe() {
         fetchDetails()
     }, [params.name]) //Usamos params.name pois agira como codependencia, portanto cada atualizacao no params.name a aplicaçao sera atualizada
 
-    function saveRecipe() {
-        
-    }
+    
     // Na C.L 35 usamos esse atributo estranho pois serve para renderizar as TAGS HTML dentro do objeto summary
     return(
         <DetailWrapper>
@@ -34,7 +32,6 @@ export default function Recipe() {
             <Info>
                 <Button className={activeTab === "instructions" ? "active" : ""} onClick={() => setActiveTab("instructions")}>Instructions</Button>
                 <Button className={activeTab === "ingredients" ? "active" : ""} onClick={() => setActiveTab("ingredients")}>Ingredients</Button>
-                <ButtonSave onClick={saveRecipe}>Salvar</ButtonSave>
 
                 {activeTab === "instructions" && (
                     <div>
@@ -84,17 +81,6 @@ const Button = styled.button`
    color: #313131;
    background: white;
    border: 2px solid black;
-   margin-right: 2rem;
-   font-weight: 600;
-`;
-
-const ButtonSave = styled.button`
-   margin-left: 35rem;
-   padding: 1rem 2rem;
-   color: white;
-   background: #54C2CC;
-   border: 2px solid black;
-   border-radius: 18px;
    margin-right: 2rem;
    font-weight: 600;
 `;
