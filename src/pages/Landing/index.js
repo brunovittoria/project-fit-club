@@ -1,9 +1,10 @@
 import './landing.css'
+import SectionHome from '../../components-lp/SectionHome'
 
 export default function Landing(){
     return(
-        <h1>
-            PAGINA LP
-        </h1>
+        <div className='App'>
+            <SectionHome/>
+        </div>
     )
 }
