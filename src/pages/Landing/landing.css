@@ -8,6 +8,7 @@
     max-width: 100%;
     height: auto;
   }
+
   .App {
     min-height: 100vh;
     width: 85vw;
@@ -17,6 +18,10 @@
   body {
     max-width: 100%;
     overflow-x: hidden;
+  }
+
+  .no-decoration{
+    text-decoration: none;
   }
   
   body {
@@ -32,6 +37,11 @@
   .navbar-menu-container {
     display: none;
   }
+
+  .nav-logo-container img{
+    margin-top: -5px;
+  }
+
   .navbar-links-container a {
     margin-right: 3rem;
     text-decoration: none;

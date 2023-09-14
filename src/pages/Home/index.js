@@ -31,14 +31,14 @@ export default function Home() {
     }
 
     return(
-        <div className='home-container'>
-            <h1>Fit Club</h1>
-            <span>Gerencie sua alimentação saudável de forma fácil.</span>
+        <div className='home-container' id='form'>
+            <h1>Yummie</h1>
+            <span>Experience culinary excellence like never before.</span>
 
             <form className='form' onSubmit={handleLogin}>
                 <input
                 type='text'
-                placeholder='Digite seu email...'
+                placeholder='Type your email...'
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 />
@@ -51,12 +51,12 @@ export default function Home() {
                 onChange={(e) => setPassword(e.target.value)}
                 />
 
-                <button type='submit'>Acessar</button>
+                <button type='submit'>Acess</button>
                 
             </form>
 
             <Link className='button-link' to="/register">
-                  Ainda não tem cadastro? Cadastre-se aqui
+             Don't have an account yet?  Sign Up 
             </Link>
 
 

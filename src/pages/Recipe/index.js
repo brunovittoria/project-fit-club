@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import styled from 'styled-components';
 import { useParams } from 'react-router-dom';  //Iremos usar para pegar o ID da receita que foi clicada que aparece no URL pra renderizar-la na tela
+import './recipe.css'
 
 export default function Recipe() {
 
@@ -25,7 +26,7 @@ export default function Recipe() {
     // Na C.L 35 usamos esse atributo estranho pois serve para renderizar as TAGS HTML dentro do objeto summary
     return(
         <DetailWrapper>
-            <div>
+            <div className="image-container-recipe">
                 <h2>{details.title}</h2>
                 <img src={details.image} alt=""/>
             </div>
@@ -34,7 +35,7 @@ export default function Recipe() {
                 <Button className={activeTab === "ingredients" ? "active" : ""} onClick={() => setActiveTab("ingredients")}>Ingredients</Button>
 
                 {activeTab === "instructions" && (
-                    <div>
+                    <div className="instructions-container-recipe">
                         <h3 dangerouslySetInnerHTML={{ __html: details.summary}}></h3> 
                         <h3 dangerouslySetInnerHTML={{ __html: details.instructions}}></h3> 
                     </div>
@@ -52,11 +53,20 @@ export default function Recipe() {
     )
 }
 
+
 const DetailWrapper = styled.div`
-   margin-top: 10rem;
-   margin-bottom: 5rem;
-   margin-left: 4rem;
+   width: 100%;
    display: flex;
+   padding: 2rem;
+   gap: 4rem;
+
+   .image-container-recipe{
+    width: 100%;
+    max-width: 600px;
+    img{
+        width: 100%;
+    }
+   }
 
    .active {
     background: linear-gradient(35deg, #494949, #313131);
@@ -73,6 +83,13 @@ const DetailWrapper = styled.div`
    }
    ul {
     margin-top: 2rem;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2;
+   }
+
+   @media screen and (max-width: 1024px){
+    flex-direction: column;
    }
 `;
 
@@ -86,5 +103,10 @@ const Button = styled.button`
 `;
 
 const Info = styled.div`
-   margin-left: 10rem;
+   max-width: 60%;
+
+   @media screen and (max-width: 1024px){
+    max-width: 100%;
+    width: 100%;
+   }
 `;

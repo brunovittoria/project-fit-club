@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { auth } from '../../firebaseConnection'
 import { signOut } from 'firebase/auth'
 import styled  from 'styled-components'
-import { GiKnifeFork } from 'react-icons/gi'
+import Logo from '../../assets/logo.svg.png'
 
 export default function Header(){
 
@@ -16,21 +16,15 @@ export default function Header(){
     return(
         <header>
             <Nav>
-            <GiKnifeFork/>
-            <Logo to={"/admin"}>Fit Club</Logo>
+            <Link to={"/admin"} className="nav-logo-container-admin">
+                <img className='logo-admin-nav' src={Logo} alt="" />
+            </Link>
             </Nav>
-            <button className='btn-logout' onClick={handleLogout}>Sair</button>
+            <button className='btn-logout' onClick={handleLogout}>Exit</button>
         </header>
     )
 }
 
-const Logo = styled(Link)`
-    text-decoration: none;
-    color: #fff;
-    font-size: 1.5rem;
-    font-weight: 400;
-    font-family: 'Lobster Two', cursive;
-`
 
 const Nav = styled.div`
     padding: 4rem 0rem;

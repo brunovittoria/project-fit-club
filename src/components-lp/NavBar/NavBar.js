@@ -1,7 +1,11 @@
-import React, { useState } from "react"
-import Logo from "../../assets/logo.svg"
-import { BsCart2 } from "react-icons/bs"
-import { HiOutlineBars3 } from "react-icons/hi2"
+import React, { useState } from "react";
+import './navbar.css'
+import { useSpring, animated } from "react-spring";
+import {Link} from "react-scroll";
+import Logo from "../../assets/logo.svg.png";
+import { BsCart2 } from "react-icons/bs";
+import { HiOutlineBars3 } from "react-icons/hi2";
+import { Navigate, useNavigate } from "react-router-dom";
 import {
     Box,
     Drawer,
@@ -18,6 +22,7 @@ import { PhoneRounded } from "@mui/icons-material"
 import { ShoppingCartRounded } from "@mui/icons-material"
 
 export default function NavBar(){
+    const navigate = useNavigate();
 
     const [openMenu, setOpenMenu] = useState(false)
     const menuOptions = [
@@ -50,14 +55,14 @@ export default function NavBar(){
             </div>
 
             <div className="navbar-links-container">
-                <a href="">Home</a>
-                <a href="">About</a>
-                <a href="">Testimonials</a>
-                <a href="">Contact</a>
-                <a href="">
-                    <BsCart2 className="nav-bar-cart-icon" />
-                </a>
-                <button className="primary-button">Booking Now</button>
+                <Link className="link-navbar" to="hero" spy={true} smooth={true} offset={50} duration={500}>Home</Link>
+                <Link className="link-navbar" to="about" spy={true} smooth={true} offset={50} duration={500}>About</Link>
+                <Link className="link-navbar" to="testimonials" spy={true} smooth={true} offset={50} duration={500}>Testimonials</Link>
+                <Link className="link-navbar" to="contact" spy={true} smooth={true} offset={50} duration={500}>Contact</Link>
+            
+                <Link to="/form">
+                <button className="primary-button" onClick={() => navigate("/form")}> Register Now</button>
+                </Link>
             </div>
 
             <div className="navbar-menu-container">

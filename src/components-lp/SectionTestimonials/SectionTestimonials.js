@@ -4,20 +4,21 @@ import {AiFillStar} from "react-icons/ai"
 import './SectionTestimonials.css'
 
 export default function SectionTestimonials(){
+
     return(
-        <div className="work-section-wrapper">
+        <div id="testimonials" className="work-section-wrapper">
             <div className="work-section-top">
                 <p className="primary-subheading">Testimonials</p>
                 <h1 className="primary-heading">What They Are Saying</h1>
                 <p className="primary-text">
-                    Lorem ipsum doler dsfjiosdfnosd okopmpoefdsg sdapofmoprtenmgio sdfkmsdf fdfmsflm
+                Join our community of food enthusiasts and start creating unforgettable dishes today.
                 </p>
             </div>
 
             <div className="testimonial-section-bottom">
                 <img src={ProfilePic} alt=""/>
                 <p>
-                    Lorem imkdf sdfppmpo sdfsdfsdopfm sdfsdfsdpfmplm pompkmoiksd knmkmn knohef gfhfghfgh
+                "The variety of recipes is incredible, and the app is so user-friendly. I'm hooked!" 
                 </p>
                 <div className="testimonials-stars-container">
                     <AiFillStar/>

@@ -19,6 +19,10 @@ svg{
     font-weight: bold;
 }
 
+.logo-admin-nav{
+    width: 40%;
+}
+
 .recipes{
     text-decoration: none;
     cursor: pointer;

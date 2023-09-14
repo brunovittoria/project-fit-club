@@ -8,17 +8,17 @@ export default function SectionWork(){
         {
             image: PickMeals,
             title: "Pick Meals",
-            text: "Lorem ipsum dolor sit sdfjsdifjmsdofs sdfsdfsdf sdfsdfsdf sdf.",
+            text: "Browse our extensive collection of recipes, categorized for your convenience.",
         },
         {
             image: ChooseMeals,
-            title: "Choose How Often",
-            text: "Lorem ipsum dolor sit sdfjsdifjmsdofs sdfsdfsdf sdfsdfsdf sdf.",
+            title: "Follow Instructions",
+            text: "Follow step-by-step instructions, complete with helpful tips and visuals.",
         },
         {
             image: DeliveryMeals,
-            title: "Fast Deliveries",
-            text: "Lorem ipsum dolor sit sdfjsdifjmsdofs sdfsdfsdf sdfsdfsdf sdf.",
+            title: "Get rid of Delivery Apps",
+            text: "Cook with confidence and savor the delicious results",
         },
         
     ]
@@ -28,7 +28,7 @@ export default function SectionWork(){
                 <p className="primary-subheading">Work</p>
                 <h1 className="primary-heading">How it Works</h1>
                 <p className="primary-text">
-                    Lorem ipsum dolor sit amet consecutd sdfsdf ojmkjf asuhkovnmsd pjkfdrinp
+                Simple Steps to Culinary Excellence
                 </p>
             </div>
 
