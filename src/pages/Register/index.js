@@ -31,13 +31,13 @@ export default function Register() {
 
     return(
         <div className='home-container'>
-            <h1>Cadastre-se</h1>
-            <span>Vamos criar sua conta</span>
+            <h1>Register</h1>
+            <span>Let's create your account</span>
 
             <form className='form' onSubmit={handleRegister}>
                 <input
                 type='text'
-                placeholder='Digite seu email...'
+                placeholder='Type your email...'
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 />
@@ -49,11 +49,11 @@ export default function Register() {
                 onChange={(e) => setPassword(e.target.value)}
                 />
 
-                <button type='submit'>Registrar</button>
+                <button type='submit'>Register</button>
             </form>
 
             <Link className='button-link' to="/">
-               Já tem cadastro? Entre aqui
+            Already have a registration? Click here
             </Link>
 
 
